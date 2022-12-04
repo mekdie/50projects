@@ -24,3 +24,5 @@ The showcase website can be viewed <a href="https://mekdie.github.io/50projects/
     -   Events Listener
     -   Logical Operator
     -   JS EcmaScript 6 (ES 6)
+    -   JS Fetch API (Async and Await)
+    -   Callback functions
