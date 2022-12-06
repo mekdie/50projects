@@ -14,9 +14,9 @@ The showcase website can be viewed <a href="https://mekdie.github.io/50projects/
     -   Basic Layout-ing (Margin, Padding, etc.)
     -   Colors
     -   Alignment
-    -   Flex box
+    -   Flexbox
     -   Shadows
-    -   Animations/Transitions
+    -   Animations (Transition and Transform)
     -   Responsive Layout
     -   Custom Properties
 -   JavaScript (Vanilla JS):
