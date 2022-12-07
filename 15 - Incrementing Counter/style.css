@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+/* If you do not include this then, the padding or margin size will be added on top of the border width / height */
+* {
+    box-sizing: border-box;
+}
+body {
+    background: #8e44ad;
+    color: white;
+    font-family: "Roboto Mono", sans-serif;
+    margin: 0;
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.counter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 30px 50px;
+}
+
+.counter {
+    font-size: 60px;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 890px) {
+    body {
+        flex-direction: column;
+    }
+}
