@@ -29,6 +29,7 @@ function createTags(input) {
         .map((el) => el.trim())
         .filter((el) => el !== "");
 
+    //make it all empty first before adding a new one
     tagContainer.innerHTML = "";
 
     // maps = return new array
