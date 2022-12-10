@@ -21,6 +21,20 @@ header {
     justify-content: space-between;
 }
 
+#searchResultDiv {
+    color: white;
+    margin: 3rem;
+    display: none;
+}
+
+#searchResultDiv.display {
+    display: block;
+}
+
+#searchNotFound {
+    display: none;
+}
+
 .search {
     background-color: white;
     border: 2px solid var(--primary-color);

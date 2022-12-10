@@ -7,6 +7,9 @@ const SEARCH_API =
 const form = document.getElementById("form");
 const search = document.getElementById("search");
 const main = document.getElementById("main");
+const searchResult = document.getElementById("searchResult");
+const searchResultDiv = document.getElementById("searchResultDiv");
+const searchNotFound = document.getElementById("searchNotFound");
 getMovies(API_URL);
 
 async function getMovies(url) {
@@ -17,6 +20,11 @@ async function getMovies(url) {
 }
 
 function showMovies(movies) {
+    //check if movies is empty when searching
+    searchNotFound.style.display = "none";
+    if (movies.length === 0) {
+        searchNotFound.style.display = "inline-block";
+    }
     main.innerHTML = ""; //clear it
     movies.forEach((movie) => {
         //object destructing to get specific key from movie
@@ -56,6 +64,9 @@ form.addEventListener("submit", (e) => {
     e.preventDefault(); //so that it doesnt actually submit
 
     const searchTerm = search.value;
+
+    searchResultDiv.classList.add("display");
+    searchResult.textContent = searchTerm;
 
     if (searchTerm && searchTerm !== "") {
         getMovies(SEARCH_API + searchTerm);
