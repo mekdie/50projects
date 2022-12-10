@@ -101,7 +101,7 @@ main {
 }
 
 .overview {
-    background-color: grey;
+    background-color: rgb(128, 128, 128, 0.9);
     color: black;
     padding: 2rem;
     position: absolute;
@@ -111,6 +111,7 @@ main {
     max-height: 100%;
     transform: translateY(101%);
     transition: transform 0.3s ease-in;
+    overflow: auto;
 }
 
 .movie:hover .overview {
@@ -120,6 +121,11 @@ main {
 #logo {
     width: 400px;
     height: auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 @media screen and (max-width: 690px) {
