@@ -9,6 +9,8 @@ const needleSecond = document.querySelector(".needle.second");
 const needleMinute = document.querySelector(".needle.minute");
 const needleHour = document.querySelector(".needle.hour");
 
+const html = document.querySelector("html");
+
 const days = [
     "Sunday",
     "Monday",
@@ -34,8 +36,29 @@ const months = [
     "Dec",
 ];
 
+// Check with localStorage which theme to apply
+function setTheme() {
+    if (localStorage.getItem("clockTheme") === "light") {
+        changeThemeTo("light");
+    } else {
+        changeThemeTo("dark");
+    }
+}
+
+// Change theme with it's name in params
+function changeThemeTo(theme = "default") {
+    if (theme === "dark") {
+        localStorage.setItem("clockTheme", "dark");
+        html.classList.add("dark");
+        toggleEl.innerHTML = "Light mode";
+    } else {
+        localStorage.setItem("clockTheme", "light");
+        html.classList.remove("dark");
+        toggleEl.innerHTML = "Dark mode";
+    }
+}
+
 toggleEl.addEventListener("click", (e) => {
-    const html = document.querySelector("html");
     if (html.classList.contains("dark")) {
         html.classList.remove("dark");
         e.target.innerHTML = "Dark mode";
@@ -43,8 +66,24 @@ toggleEl.addEventListener("click", (e) => {
         html.classList.add("dark");
         e.target.innerHTML = "light mode";
     }
-    // html.classList.toggle("dark");
+    // html.classList.toggle("dark")
+    if (localStorage.getItem("clockTheme") === "light") {
+        changeThemeTo("dark");
+    } else {
+        changeThemeTo("light");
+    }
 });
+
+// // Toggle themes with a click
+// toggleThemeBtn.addEventListener("click", (e) => {
+//     e.preventDefault();
+
+//     if (localStorage.getItem("clockTheme") === "light") {
+//         changeThemeTo("default");
+//     } else {
+//         changeThemeTo("light");
+//     }
+// });
 
 function setTime() {
     const time = new Date();
@@ -106,5 +145,5 @@ function scale(number, inMin, inMax, outMin, outMax) {
 }
 
 // setTime();
-
+setTheme();
 setInterval(setTime, 1000);
